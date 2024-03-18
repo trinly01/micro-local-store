@@ -4,6 +4,8 @@ MicroLocalStore is a lightweight, easy-to-use JavaScript library that provides a
 
 With MicroLocalStore, you can easily manage state listeners, send and receive messages between parent and child windows, and more. It's compatible with both browser and Node.js environments.
 
+![MicroLocalStore Demo](microLocalStore.gif)
+
 ## Installation
 
 You can install MicroLocalStore using npm:
