@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Micro Local Store - App 2</title>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1>Micro Local Store - App 2</h1>
+    <p>Open the console to see the state updates.</p>
+    <div id="data"></div>
+
+    <button onclick="handleClick()">Click me</button>
+
+    <script>
+      // Create a new instance of MicroLocalStore
+      const allowedOrigins = ["http://127.0.0.1:8001", "http://127.0.0.1:8002"];
+      const store1 = new window.MicroLocalStore("myApp", allowedOrigins);
+
+      const div = document.querySelector("#data");
+      // Subscribe to state changes
+      store1.onChange((state) => {
+        console.log("App 2 state updated:", state);
+        div.innerHTML = JSON.stringify(state);
+      });
+
+      function handleClick() {
+        store1.setState({
+          userData: { name: "Trin pogi", date: new Date() },
+        });
+
+        console.log("clicked");
+      }
+
+      window.addEventListener(
+        "message",
+        (event) => console.log("message", event.data),
+        false
+      );
+
+      window.postMessage(
+        { type: "micro-local-store", id: "myApp", state: { date: new Date() } },
+        "http://127.0.0.1:8001"
+      );
+    </script>
+  </body>
+</html>

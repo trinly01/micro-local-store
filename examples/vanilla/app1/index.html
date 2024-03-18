@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Micro Local Store - App 1</title>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1>Micro Local Store - App 1</h1>
+    <p>Open the console to see the state updates.</p>
+    <div id="data"></div>
+    <script>
+      // Create a new instance of MicroLocalStore
+      const allowedOrigins = ["http://127.0.0.1:8001", "http://127.0.0.1:8002"];
+      const store1 = new window.MicroLocalStore("myApp", allowedOrigins);
+
+      const div = document.querySelector("#data");
+
+      // Subscribe to state changes
+      store1.onChange((state) => {
+        console.log("App 1 state updated:", state);
+        div.innerHTML = JSON.stringify(state);
+      });
+
+      window.addEventListener("message", (event) =>
+        console.log("message", event.data)
+      );
+    </script>
+  </body>
+</html>
