@@ -27,5 +27,13 @@
     "state-listeners"
   ],
   "author": "Trinmar Boado",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trinly01/micro-local-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trinly01/micro-local-store/issues"
+  },
+  "homepage": "https://github.com/trinly01/micro-local-store#readme"
 }
