@@ -1,6 +1,6 @@
 {
   "name": "micro-local-store",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MicroLocalStore is a lightweight, easy-to-use JavaScript library that provides a shared local storage solution across different origins. It creates an isolated local storage for each instance, allowing you to store and retrieve data seamlessly. It's perfect for micro-frontend architectures, enabling different micro-apps to communicate and share state without conflicts. With MicroLocalStore, you can easily manage state listeners, send and receive messages between parent and child windows, and more. It's compatible with both browser and Node.js environments.",
   "main": "src/index.js",
   "directories": {
